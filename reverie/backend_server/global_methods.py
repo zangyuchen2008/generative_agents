@@ -218,6 +218,10 @@ def copyanything(src, dst):
     None
   """
   try:
+    shutil.rmtree(dst)
+  except:
+    pass
+  try:
     shutil.copytree(src, dst)
   except OSError as exc: # python >2.5
     if exc.errno in (errno.ENOTDIR, errno.EINVAL):
