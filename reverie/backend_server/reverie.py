@@ -434,6 +434,7 @@ class ReverieServer:
       sim_command = input("Enter option: ")
       sim_command = sim_command.strip()
       ret_str = ""
+      sim_command = "run 1"
 
       try: 
         if sim_command.lower() in ["f", "fin", "finish", "save and finish"]: 
@@ -605,10 +606,10 @@ if __name__ == '__main__':
   #                    "July1_the_ville_isabella_maria_klaus-step-3-21")
   # rs.open_server()
 
-  origin = input("Enter the name of the forked simulation: ").strip()
-  target = input("Enter the name of the new simulation: ").strip()
+  # origin = input("Enter the name of the forked simulation: ").strip()
+  # target = input("Enter the name of the new simulation: ").strip()
 
-  rs = ReverieServer(origin, target)
+  rs = ReverieServer("base_the_ville_isabella_maria_klaus", "test-simulation")
   rs.open_server()
 
 
