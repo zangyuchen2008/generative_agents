@@ -39,6 +39,8 @@ from persona.persona import *
 #                                  REVERIE                                   #
 ##############################################################################
 
+SIM_COMMAND = "run 1"
+
 class ReverieServer: 
   def __init__(self, 
                fork_sim_code,
@@ -431,10 +433,12 @@ class ReverieServer:
     sim_folder = f"{fs_storage}/{self.sim_code}"
 
     while True: 
-      sim_command = input("Enter option: ")
-      sim_command = sim_command.strip()
+      if SIM_COMMAND:
+        sim_command = SIM_COMMAND
+      else:
+        sim_command = input("Enter option: ")
+        sim_command = sim_command.strip()
       ret_str = ""
-      sim_command = "run 1"
 
       try: 
         if sim_command.lower() in ["f", "fin", "finish", "save and finish"]: 
